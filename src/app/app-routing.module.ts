@@ -1,3 +1,4 @@
+import { FakepostComponent } from './fakepost/fakepost.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { NasaComponent } from './nasa/nasa.component';
 import { HomeComponent } from './home/home.component';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'nasa', component: NasaComponent },
+  { path: 'fake', component: FakepostComponent },
   { path: '', redirectTo: '/home', pathMatch:'full' },
   { path: '**', component: NotfoundComponent }
 ];

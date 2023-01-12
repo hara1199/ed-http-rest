@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NasaComponent } from './nasa/nasa.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FakepostComponent } from './fakepost/fakepost.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NasaComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    FakepostComponent
   ],
   imports: [
     BrowserModule,

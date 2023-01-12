@@ -8,14 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NasaComponent implements OnInit {
 
-  response:any;
+  response: any;
+  loading = false;
+  message = '';
 
-  constructor(private service:NasaService) { }
+
+  constructor(private service: NasaService) { }
 
   ngOnInit(): void {
+    // this.service.get().subscribe({
+    //   next: data => this.response = data
+    // });
+  }
+
+  makeRequest() {
+    this.loading = true;
     this.service.get().subscribe({
-      next: data => this.response = data
+      next: data => {
+        this.response = data;
+        this.loading = false;
+      },
+      error: er => this.message = "Error" + er.message,
+      complete: () => this.message = "Completed..."
     });
+
   }
 
 }

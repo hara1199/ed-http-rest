@@ -1,5 +1,16 @@
-<div>
-    <pre>{{ response | json }}</pre>
+<h2>Welcome to Nasa</h2>
+<button (click)="makeRequest()" class="btn btn-primary">Picture of the Day</button>
+<br>
+<!-- <div *ngIf="loading">Loading...</div> -->
+<!-- <div *ngIf="loading" class="spinner-border text-danger" role="status"></div> -->
+
+<pre>{{ response | json }}</pre>
+
+<div *ngIf="response" >
     <img [src]="response.url" alt="" height="150px">
     {{ response.title }}
 </div>
+
+<div class="alert alert-info">{{ message }}</div>
+
+{{ message }}
